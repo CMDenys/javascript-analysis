@@ -30,19 +30,45 @@ function buildTable(tableData) {
 
 
 function handleClick() {
-    var date = d3.select("#datetime").property("value")
+    var date = d3.selectAll("#datetime").property("value")
+    var city = d3.selectAll("#city").property("value")
+    var state = d3.selectAll("#state").property("value")
+    var country = d3.selectAll("#country").property("value")
+    var shape = d3.selectAll("#shape").property("value")
+
+
     let filteredData = tableData
     if (date) {
-        filteredData = filteredData.filter(site => site.datetime === date);
+        filteredData = filteredData.filter(site => site.datetime === date)
+    }    
+    if (city) {    
+        filteredData = filteredData.filter(site => site.city === city) 
     }
-
+    if (state) {    
+        filteredData = filteredData.filter(site => site.state === state) 
+    }
+    if (country) {    
+        filteredData = filteredData.filter(site => site.country === country) 
+    }
+    if (shape) {    
+        filteredData = filteredData.filter(site => site.shape === shape) 
+    }
     buildTable(filteredData);
-    console.log(date)
 }
 
 //just want this to listen.  Execute the handle event when the filter-btn id was clicked.
-d3.selectAll("#filter-btn").on("click", handleClick);
 
+function clearClick() {
+    tableData.date.value("")
+    tableData.city.value("")
+    tableData.state.value("")    
+    tableData.country.value("")
+    tableData.shape.value("")
+}
+
+
+d3.selectAll("#filter-btn").on("click", handleClick);
+d3.selectAll("#clear-btn").on("click", clearClick);
 
 buildTable(tableData);
 
