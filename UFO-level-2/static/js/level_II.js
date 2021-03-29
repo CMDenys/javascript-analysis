@@ -37,7 +37,7 @@ function handleClick() {
     var shape = d3.selectAll("#shape").property("value")
 
 
-    let filteredData = tableData
+    var filteredData = tableData
     if (date) {
         filteredData = filteredData.filter(site => site.datetime === date)
     }    
@@ -56,19 +56,67 @@ function handleClick() {
     buildTable(filteredData);
 }
 
+function clearClick () { 
+    {
+        var map = d3.map({"a": datetime})
+        A = map.get("a")
+        map.clear(A)
+    }
+    {
+        var map = d3.map({"b": city})
+        B = map.get("b")
+        map.clear(B)
+    }
+    {
+        var map = d3.map({"c": state})
+        C = map.get("c")
+        map.clear(C)
+    }
+    {
+        var map = d3.map({"d": country})
+        D = map.get("d")
+        map.clear(D)
+    }
+    {
+        var map = d3.map({"e": shape})
+        E = map.get("e")
+        map.clear(E)
+    }
+    
+    buildTable(tableData)
+}
+
 //just want this to listen.  Execute the handle event when the filter-btn id was clicked.
 
-function clearClick() {
-    tableData.date.value("")
-    tableData.city.value("")
-    tableData.state.value("")    
-    tableData.country.value("")
-    tableData.shape.value("")
-}
+// function clearClick() {
+
+//     for (i= 0; i < sightingsReport.length; i++){
+
+//     tableData.date.value("")
+//     tableData.city.value("")
+//     tableData.state.value("")    
+//     tableData.country.value("")
+//     tableData.shape.value("")
+//     }
+// }
 
 
 d3.selectAll("#filter-btn").on("click", handleClick);
+// d3.selectAll("#filter-btn").on("event", handleClick);
 d3.selectAll("#clear-btn").on("click", clearClick);
+// HTMLFormElement.reset(".list-group-item").on("click", clearClick);
+// var set = d3.set([tableData]);
+       
+// Checking whether any element is present
+// in the set or not before calling set.clear() function
+// A = set.has(date);
+// B = set.has(city);
+// C = set.has(state);
+
+// console.log(A)
+// console.log(B)
+// console.log(C)
+
 
 buildTable(tableData);
 
