@@ -1,3 +1,4 @@
+
 //from data.js
 const tableData = data;
 
@@ -5,8 +6,6 @@ const tableData = data;
 // Get a reference to the table body
 var tbody = d3.select("tbody");
 
-// Console.log the sightings data from data.js
-//console.log(data);
 
 function buildTable(tableData) {
 
@@ -28,7 +27,7 @@ function buildTable(tableData) {
     });
 }
 
-
+// Part II - filter by multiple inputs
 function handleClick() {
     var date = d3.selectAll("#datetime").property("value")
     var city = d3.selectAll("#city").property("value")
@@ -56,6 +55,7 @@ function handleClick() {
     buildTable(filteredData);
 }
 
+//Reset data in form
 function clearClick () { 
     {
         var map = d3.map({"a": datetime})
@@ -100,23 +100,13 @@ function clearClick () {
 //     }
 // }
 
-
+// Event Listener to filter table by input
 d3.selectAll("#filter-btn").on("click", handleClick);
-// d3.selectAll("#filter-btn").on("event", handleClick);
+// Event Listener to clear form fields
 d3.selectAll("#clear-btn").on("click", clearClick);
-// HTMLFormElement.reset(".list-group-item").on("click", clearClick);
-// var set = d3.set([tableData]);
-       
-// Checking whether any element is present
-// in the set or not before calling set.clear() function
-// A = set.has(date);
-// B = set.has(city);
-// C = set.has(state);
 
-// console.log(A)
-// console.log(B)
-// console.log(C)
+       
+
 
 
 buildTable(tableData);
-
