@@ -25,6 +25,7 @@ function buildTable(tableData) {
             // Step 5: Use d3 to update each cell's text with sightings values
             cell.text(value);
         });
+       
     });
 }
 
