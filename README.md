@@ -24,7 +24,7 @@ Lastly, a function called clearClick was created to clear any data entered into 
 
 <p float="left" align="center">
   <img src="images/clear_filter.png" width="400" />
-  <img src="images/events.png" width="400" /> 
+  <img src="images/events.png" width="400" margin-top="0"/> 
 </p>
 
 
