@@ -1,4 +1,3 @@
-# javascript-challenge
 
 <p float="left" align="center">
   <img src="images/table.png" width="400" />
