@@ -22,7 +22,7 @@ Next, a function called handleClick was created to "listen" for a filter button 
 Lastly, a function called clearClick was created to clear any data entered into the input fields and reset the table.  Event listeners were added to handle the event functions and finally rebuild the table when clearClick is called.
 
 <p float="left" align="center">
-  <img src="images/clear_filter.png" width="400" />
+  <img src="images/clear_filter.png" width="350" />
   <img src="images/events.png" width="400"/> 
 </p>
 
